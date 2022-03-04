@@ -1,4 +1,4 @@
-package add_tow_numbers;
+package add_two_numbers;
 
 public class ListNode {
     int val;

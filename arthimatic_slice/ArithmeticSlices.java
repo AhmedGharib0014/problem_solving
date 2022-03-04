@@ -1,3 +1,4 @@
+package arthimatic_slice;
 
 class ArithmeticSlices {
 

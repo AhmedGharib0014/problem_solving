@@ -1,3 +1,5 @@
+package matrix_zeros;
+
 import java.util.HashSet;
 
 class MatrixZeros {
