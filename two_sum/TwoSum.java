@@ -8,16 +8,20 @@ public class TwoSum {
         HashMap<Integer, Integer> numbersMap = new HashMap<Integer, Integer>();
 
         for (int i = 0; i < nums.length; i++) {
-            int x = target - i;
+            int x = target - nums[i];
             if (numbersMap.containsKey(x)) {
                 result[0] = numbersMap.get(x);
                 result[1] = i;
+                
                 return result;
             } else {
                 numbersMap.put(x, i);
             }
 
         }
+
+        
+
 
         return result;
 
