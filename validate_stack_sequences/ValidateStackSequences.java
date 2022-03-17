@@ -1,6 +1,5 @@
-package ValidateStackSequences;
+package validate_stack_sequences;
 
-import java.security.cert.TrustAnchor;
 import java.util.Stack;
 
 public class ValidateStackSequences {
