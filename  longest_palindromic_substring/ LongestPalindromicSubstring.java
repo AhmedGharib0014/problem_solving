@@ -47,7 +47,6 @@ class LongestPalindromicSubstring {
 
     public static void main(String[] args) {
         String s = "bb";
-
         System.out.println(longestPalindrome(s));
     }
 
