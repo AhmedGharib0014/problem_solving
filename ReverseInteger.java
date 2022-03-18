@@ -5,21 +5,36 @@ public class ReverseInteger {
         String s=Integer.toString(x);
         StringBuilder stringBuilder= new  StringBuilder();
         for (int i=0;i<s.length();i++){
+            if(x<0 && i==0) continue;;
             stringBuilder.append(s.charAt(i));
         }
 
-        for(int i=0 ;i<s.length();i++){
-            Character ch1 = stringBuilder.charAt(i);
-            Character ch2 = stringBuilder.charAt(s.length()-i-1);
-            stringBuilder.setCharAt(i,ch2);
-            stringBuilder.setCharAt(s.length()-1,ch1);
+
+        for(int i=0 ;i<stringBuilder.length()/2;i++){
+            Character ch1 = stringBuilder.charAt(stringBuilder.length()-i-1);
+            stringBuilder.setCharAt(stringBuilder.length()-i-1, stringBuilder.charAt(i));
+            stringBuilder.setCharAt(i,ch1);
         }
 
-        return Integer.parseInt(stringBuilder.toString());
+        try{
+            int result = Integer.parseInt(stringBuilder.toString());
+            if(x<0){
+                return  -1*result;
+            }else{
+                return  result;
+            }
+
+        }catch (Exception e){
+            return  0;
+        }
+
+
+
+
     }
 
     public static void main(String[] args) {
-        System.out.println(reverse(123));
+        System.out.println(reverse(12));
     }
 
 }
