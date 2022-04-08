@@ -7,9 +7,6 @@ import java.util.*;
 import java.util.prefs.NodeChangeEvent;
 
 class Solution{
- 
-
-
     class  Interval implements Comparable<Interval> {
         int start;
         int end;
@@ -72,11 +69,6 @@ class Solution{
             System.out.println();
         }
 
-
-
     }
-
-
-
 
 }
