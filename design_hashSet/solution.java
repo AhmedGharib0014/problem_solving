@@ -1,5 +1,6 @@
 
 
+   class Solution{
     class MyHashSet {
         int arrsySize = 1024;
               ArrayList<LinkedList<Integer>> listarray = new ArrayList<LinkedList<Integer>>();
@@ -34,3 +35,5 @@
                   return listarray.get(hashCode).contains(key);
               }
       }
+
+   }
