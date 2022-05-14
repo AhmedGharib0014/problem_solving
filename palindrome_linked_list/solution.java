@@ -1,6 +1,6 @@
 
 public class solution {
-    // thre is another solution by using fast/slow pointers and reverse linkedList
+    // there is another solution by using fast/slow pointers and reverse linkedList
     public boolean isPalindrome(ListNode head) {
         ArrayList<Integer> arrayList = new ArrayList<>();
        while (head!= null){
