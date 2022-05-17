@@ -26,7 +26,5 @@ public class solution {
               return  left == right;
           }
           return  left.val == right.val && isSemetricSubtrees(left.left,right.right) && isSemetricSubtrees(left.right,right.left);
-      }
-  
-    
+      }    
 }
