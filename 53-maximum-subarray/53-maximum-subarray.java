@@ -28,18 +28,24 @@ class Solution {
    
 
     public int maxSumKadanes(int[] nums){
-        ArrayList<Integer> arrayList = new ArrayList<>();
+       ArrayList<Integer> arrayList = new ArrayList<>();
         int maxSum=Integer.MIN_VALUE;
         int sum=0;
-        for(int i=0;i<nums.length;i++){
-            arrayList.add(nums[i]);
-            sum += nums[i];
+
+        for(int n : nums){
+            sum += n;
             if(sum>maxSum) maxSum=sum;
             if(sum<0){
                 arrayList.clear();
                 sum=0;
+            }else{
+                arrayList.add(n);
+                
             }
+
+
         }
+
         return maxSum;
     }
     public int maxSubArray(int[] nums) {
