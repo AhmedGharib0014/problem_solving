@@ -1,4 +1,5 @@
 class Solution {
+   
     public  int maxSumArrayWidow(int[] nums){
         if(nums.length == 0) return 0;
 
@@ -46,5 +47,6 @@ class Solution {
     }
 
 
-}
 
+
+}
