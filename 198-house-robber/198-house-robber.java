@@ -1,6 +1,20 @@
 class Solution {
    
+    // recursion version exceeds time limits
+    public  int calculateMoney(int[] nums,int currentIndex){
+        
+        if(currentIndex >= nums.length) return 0;
+        
+        return Math.max(calculateMoney(nums,currentIndex+2),
+                        calculateMoney(nums,currentIndex+3))+nums[currentIndex];
+    }
 
+
+    public int robRecursion(int[] nums) {
+        if(nums.length < 2) return nums[0];
+        
+        return Math.max(calculateMoney(nums,0),calculateMoney(nums,1));
+    }
 
     public int rob(int[] nums) {
        if(nums.length==1) return nums[0];
@@ -12,6 +26,8 @@ class Solution {
             max1=max2;
             max2=temp;
         }
+        
+        
         return max2;
     }
 }
