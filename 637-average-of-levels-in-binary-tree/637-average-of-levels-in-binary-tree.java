@@ -14,43 +14,44 @@
  * }
  */
 class Solution {
-     public List<Double> averageOfLevels(TreeNode root)
-    {
-        ArrayList<Double> result = new ArrayList<>();
-        if(root == null) return result;
-
-        int currentLevelIndex=1;
-        int currentLevelCount=1;
-
-        int nextLevelCount=0;
-        Double levelSum=0.0;
-       Queue<TreeNode> pq = new LinkedList<>();
-        pq.add(root);
+    public List<Double> averageOfLevels(TreeNode root) {
+             ArrayList<Double> result = new ArrayList<>();
+             if(root == null) return result;
+        
+             Queue<TreeNode> pq = new LinkedList<>();
+             int nextLevelCount = 1;
+              pq.add(root);
 
 
-        while (pq.size()>0){
-            TreeNode curr = pq.poll();
-            levelSum += curr.val;
-            currentLevelIndex --;
-            if(curr.left!= null){
-                    pq.add(curr.left);
-                    nextLevelCount++;
-                }
-                if(curr.right != null){
-                    pq.add(curr.right);
-                    nextLevelCount++;
-                }
-            if(currentLevelIndex==0){
-                currentLevelIndex=nextLevelCount;
-                nextLevelCount=0;
-                result.add(levelSum/currentLevelCount);
-                levelSum=0.0;
-                currentLevelCount=currentLevelIndex;
+             while (pq.size()>0){
+                 nextLevelCount=calculateAverageOfLevel(pq,nextLevelCount,result);
+             }
+        
+             return result;
+      }
+    
+    public  int calculateAverageOfLevel(Queue<TreeNode> pq ,int levelNodesCount,
+                                        ArrayList<Double> resul){
+          Double sum=0.0;
+          int nextLevelNodesCount=0;
 
-            }
+          for(int i=0;i<levelNodesCount;i++){
+              TreeNode curr = pq.poll();
+              sum += curr.val;
 
-        }
-        return result;
-    }
+              if(curr.left!= null){
+                  pq.add(curr.left);
+                  nextLevelNodesCount++;
+              }
+              if(curr.right != null){
+                  pq.add(curr.right);
+                  nextLevelNodesCount++;
+              }
 
+          }
+
+          resul.add(sum/levelNodesCount);
+          return nextLevelNodesCount;
+
+     }
 }
