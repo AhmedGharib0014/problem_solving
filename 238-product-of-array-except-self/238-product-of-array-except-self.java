@@ -13,6 +13,7 @@ class Solution {
 
             }
         }
+        
 
         for (int i = 0; i < nums.length; i++) {
             if(zerosCount>1 || (zerosCount>0 && nums[i] != 0)){
