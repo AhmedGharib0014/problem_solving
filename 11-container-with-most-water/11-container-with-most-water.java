@@ -1,17 +1,17 @@
 class Solution {
     public int maxArea(int[] height) {
         if(height.length<=1) return 0;
-        int maxSum =0;
+        int maxVolume =0;
 
-        for (int i = 0; i <height.length ; i++) {
-            for (int j = height.length-1; j >i; j--) {
+        int i=0;
+        int j=height.length-1;
 
-                maxSum= Math.max(maxSum,Math.min(height[j], height[i]) *(j-i));
-                if(height[j]>= height[i]) break;
-
-            }
+        while (j>i){
+            maxVolume= Math.max(maxVolume,Math.min(height[j], height[i]) *(j-i));
+            if(height[j]>= height[i]) i++;
+            else j--;
         }
 
-        return maxSum;
+        return maxVolume;
     }
 }
