@@ -35,7 +35,7 @@ class Solution {
             }
 
             current=node;
-                        current.next=null;
+            current.next=null;
 
         }
         
