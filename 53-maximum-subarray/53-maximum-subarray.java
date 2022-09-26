@@ -1,7 +1,6 @@
 class Solution {
    
-    public int maxSubArray(int[] nums) {
-          ArrayList<Integer> arrayList = new ArrayList<>();
+     public int maxSubArray(int[] nums) {
         int maxSum=Integer.MIN_VALUE;
         int sum=0;
 
@@ -9,11 +8,7 @@ class Solution {
             sum += n;
             if(sum>maxSum) maxSum=sum;
             if(sum<0){
-                arrayList.clear();
                 sum=0;
-            }else{
-                arrayList.add(n);
-                
             }
 
 
@@ -21,7 +16,6 @@ class Solution {
 
         return maxSum;
     }
-
 
 
 
