@@ -21,7 +21,7 @@ class NumArray {
         int length(int length){
             if((length &(length-1))==0) return length*2-1;
             else {
-                int temp =(int)Math.pow(2, Math.ceil(Math.log(length)/Math.log(2)));
+            int temp =(int)Math.pow(2, Math.ceil(Math.log(length)/Math.log(2)));
              return temp*2-1;
             }
         }
