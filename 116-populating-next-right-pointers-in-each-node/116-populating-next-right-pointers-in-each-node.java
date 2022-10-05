@@ -23,8 +23,7 @@ class Node {
 
 class Solution {
     public Node connect(Node root) {
-         Queue<Node> queue = new LinkedList<>();
-        
+        Queue<Node> queue = new LinkedList<>();
         queue.add(root);
         int lenght=0;
         
