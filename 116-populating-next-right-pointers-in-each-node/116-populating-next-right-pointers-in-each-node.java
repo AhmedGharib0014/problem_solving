@@ -44,7 +44,6 @@ class Solution {
                     queue.add(current.right);
                 }
             }
-            if(current!=null) current.next=null;
         }
          return root;
     }
