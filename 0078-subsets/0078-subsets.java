@@ -14,15 +14,15 @@ class Solution {
         while (!queue.isEmpty()){
             int size = queue.size();
 
-
-
             for (int i = 0; i < size; i++) {
 
                 ArrayList<Integer> temp = queue.poll();
                 list.add(temp);
                 int start=0;
                 if(temp.size()>0){
-                    start= map.get(temp.get(temp.size()-1))+1;
+                    int last = temp.get(temp.size()-1);
+                    if(last == nums[nums.length-1]) continue;
+                    start= map.get(last)+1;
                 }
 
                 for (int j =start; j < nums.length ; j++) {
