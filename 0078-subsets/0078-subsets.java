@@ -22,7 +22,7 @@ class Solution {
                 list.add(temp);
                 int start=0;
                 if(temp.size()>0){
-                    start= map.getOrDefault(temp.get(temp.size()-1),0)+1;
+                    start= map.get(temp.get(temp.size()-1))+1;
                 }
 
                 for (int j =start; j < nums.length ; j++) {
