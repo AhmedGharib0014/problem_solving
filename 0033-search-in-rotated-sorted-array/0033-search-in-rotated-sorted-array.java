@@ -1,6 +1,6 @@
 class Solution {
     
- public int search(int[] nums, int target) {
+   public int search(int[] nums, int target) {
         
         int end = nums.length-1;
         
