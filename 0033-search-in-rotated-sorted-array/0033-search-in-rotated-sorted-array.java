@@ -31,6 +31,7 @@ class Solution {
     }
 
     public int binarySearch(int[] nums , int start , int end , int target){
+        
         if (start > end) return -1;
 
         int mid= (start + end) / 2;
