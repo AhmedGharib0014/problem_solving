@@ -7,13 +7,11 @@ class Solution {
         
         if(rowsIsMin){
             for (int [] nums: matrix){
-                int targetIndex = rowBinarySearch(nums,0,matrix[0].length-1,target);
-                if(targetIndex != -1) return true;
+                if(rowBinarySearch(nums,0,matrix[0].length-1,target) != -1) return true;
             }
         }else {
             for (int i = 0; i < matrix[0].length; i++) {
-                int targetIndex = columnBinarySearch(matrix,i,0,matrix.length-1,target);
-                if(targetIndex != -1) return true;
+                if(columnBinarySearch(matrix,i,0,matrix.length-1,target) != -1) return true;
             }
         }
         
