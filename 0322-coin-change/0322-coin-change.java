@@ -15,8 +15,8 @@ class Solution {
         for (int coin : coins){
             int temp=i-coin;
             if (temp == 0) return 1;
-            if(temp>0 && arr[temp] != -1 && arr[temp] +1 < minNumberOfCoins){
-                minNumberOfCoins=arr[temp]+1;
+            if(temp>0 && arr[temp] != -1){
+                minNumberOfCoins=Math.min(arr[temp]+1,minNumberOfCoins);
             }
         }
 
