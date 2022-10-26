@@ -22,10 +22,11 @@ class Solution {
                 boolean done = false;
                 for (int j : list){
                     if(nums[i]>j){
-                        ArrayList<Integer> list2=  map.getOrDefault(tempMax+1,new ArrayList<Integer>());
+                        tempMax++;
+                        ArrayList<Integer> list2=  map.getOrDefault(tempMax,new ArrayList<Integer>());
                         list2.add(nums[i]);
-                        map.put(tempMax+1,list2);
-                        if(tempMax+1>max)max=tempMax+1;
+                        map.put(tempMax,list2);
+                        if(tempMax>max)max=tempMax;
                         done = true;
                         break;
                     }
