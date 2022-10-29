@@ -29,7 +29,7 @@ class Solution {
             current=current.next;
         }
          
-        if(listNode != null)listNode.next= null;
+        if(listNode != null) listNode.next= null;
 
         
         return head;
