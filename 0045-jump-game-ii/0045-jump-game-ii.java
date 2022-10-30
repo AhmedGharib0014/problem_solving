@@ -14,9 +14,7 @@ class Solution {
                 }
                 if(min == Integer.MAX_VALUE) nums[i]= -1;
                 else maxJums[i] = min+1;
-                
-                System.out.println(maxJums[i]);
-            }
+                }
             
         }
         
