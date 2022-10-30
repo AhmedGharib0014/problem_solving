@@ -7,7 +7,7 @@ class Solution {
             if(nums.length -1  <= i+nums[i]) maxJums[i]=1;
             else {
                 int min = Integer.MAX_VALUE;
-                for (int j = i+1; j < Math.min(i+nums[i]+1,nums.length)  ; j++) {
+                for (int j = i+1; j < i+nums[i]+1  ; j++) {
                     if(maxJums[j]>0 && maxJums[j] < min) min= maxJums[j];
                 }
                 if(min == Integer.MAX_VALUE) nums[i]= -1;
