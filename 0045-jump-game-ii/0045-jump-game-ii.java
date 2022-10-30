@@ -8,10 +8,10 @@ class Solution {
             else {
                 int min = Integer.MAX_VALUE;
                 for (int j = i+1; j < i+nums[i]+1  ; j++) {
-                    if(maxJums[j]>0 && maxJums[j] < min) min= maxJums[j];
+                    if(maxJums[j] < min) min= maxJums[j];
                 }
-                if(min == Integer.MAX_VALUE) nums[i]= -1;
-                else maxJums[i] = min+1;
+                if(min != Integer.MAX_VALUE) maxJums[i] = min+1;
+                else maxJums[i] = Integer.MAX_VALUE;
                 }
             
         }
