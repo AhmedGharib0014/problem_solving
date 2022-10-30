@@ -8,7 +8,9 @@ class Solution {
             
                 maxJums[i] = Integer.MAX_VALUE;
             
-            for (int j = i+1; j < Math.min(i + nums[i]+1 ,nums.length) ; j++) {
+            int maxJ=Math.min(i + nums[i]+1 ,nums.length);
+            
+            for (int j = i+1; j < maxJ ; j++) {
                 if(maxJums[j] < maxJums[i]) maxJums[i]= maxJums[j]+1;
             }    
             
