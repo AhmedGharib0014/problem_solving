@@ -2,8 +2,6 @@ class Solution {
     public int jump(int[] nums) {
         int[] maxJums = new int[nums.length];
        
-
-
         for (int i = maxJums.length-2; i >= 0 ; i--) {
             
             if(nums.length -1  <= i+nums[i]) maxJums[i]=1;
