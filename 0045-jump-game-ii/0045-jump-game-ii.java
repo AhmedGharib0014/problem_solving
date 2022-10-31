@@ -6,7 +6,7 @@ class Solution {
       int numberOfJum =0;
 
       while (r < nums.length-1){
-          int max = Integer.MIN_VALUE;
+          int max = r;
 
           for (int i = l; i < r+1 ; i++) {
               if(nums[i]+i > max) max = nums[i]+i;
