@@ -1,22 +1,25 @@
 class Solution {
     public int jump(int[] nums) {
-       if(nums.length <= 0) return 0;
+      if(nums.length <= 1) return 0;
+      int l = 0;
+      int r = 0;
+      int numberOfJum =0;
 
-        int[] maxJums = new int[nums.length];
+      while (r < nums.length-1){
+          int max = Integer.MIN_VALUE;
 
-        maxJums[nums.length-1]=0;
+          for (int i = l; i < r+1 ; i++) {
+              if(nums[i]+i > max) max = nums[i]+i;
+          }
 
-        for (int i = maxJums.length-2; i >= 0 ; i--) {
-
-            maxJums[i] = Integer.MAX_VALUE;
-
-            for (int j = i+1; j < Math.min(i + nums[i]+1 ,nums.length) ; j++) {
-                if(maxJums[j] < maxJums[i]) maxJums[i]= maxJums[j]+1;
-            }
-
-        }
+          l=r+1;
+          r= max;
+          numberOfJum++;
 
 
-        return maxJums[0];
+      }
+
+
+      return numberOfJum;
     }
 }
