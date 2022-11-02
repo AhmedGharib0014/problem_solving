@@ -31,9 +31,13 @@ class Solution {
         );
 
 
-        for (int i = 0; i < columnTitle.length(); i++) {
-            result += charMap.get(columnTitle.charAt(columnTitle.length() - i - 1)) * Math.pow(26, i);
+       int i = columnTitle.length() - 1;
+
+        for (Character c : columnTitle.toCharArray()) {
+            result += charMap.get(c) * Math.pow(26, i);
+            i--;
         }
+
 
         return result;
 
