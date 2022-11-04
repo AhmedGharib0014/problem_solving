@@ -15,7 +15,7 @@ class Solution {
         }
 
         int mid = (start + end) / 2;
-        double midsqr = (double) mid * mid * 1.0;
+        double midsqr = (double) mid * mid ;
 
         if (midsqr == x) {
             return mid;
