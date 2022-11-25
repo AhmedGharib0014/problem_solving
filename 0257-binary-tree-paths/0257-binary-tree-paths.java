@@ -23,12 +23,12 @@ class Solution {
     public void dfs(TreeNode treeNode, String currentString, List<String> result) {
          
      if (treeNode.left == null && treeNode.right == null) {
-           currentString= appendValue(currentString, treeNode.val);
+            currentString= appendValue(currentString, treeNode.val);
             result.add(currentString);
             return;
         }
 
-           currentString= appendValue(currentString, treeNode.val);
+        currentString= appendValue(currentString, treeNode.val);
         
         if (treeNode.left != null) {
             dfs(treeNode.left, currentString, result);
