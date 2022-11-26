@@ -4,9 +4,10 @@ class Solution {
             int length = String.valueOf(num).length();
             int sum = 0;
 
-            for (int i = length; i >= 0; i--) {
-                int temp = (int) (num / Math.pow(10, i));
-                num -= temp * Math.pow(10, i);
+             for (int i = length; i >= 0; i--) {
+                int divisor = (int) Math.pow(10, i);
+                int temp = num /divisor;
+                num -= temp *divisor;
                 sum += temp;
             }
 
