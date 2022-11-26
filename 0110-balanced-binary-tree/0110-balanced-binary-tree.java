@@ -36,7 +36,7 @@ class Solution {
         BalancedInfo left = checkBalance(root.left);
         BalancedInfo right = checkBalance(root.right);
         
-        boolean balanced = left.isBalanced && right.isBalanced &&(Math.abs(left.height-right.height) <=1); 
+        boolean balanced = left.isBalanced && right.isBalanced && (Math.abs(left.height-right.height) <=1); 
         
         return new BalancedInfo(Math.max(left.height,right.height)+1,balanced);
     }
