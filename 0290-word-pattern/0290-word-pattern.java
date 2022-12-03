@@ -10,13 +10,11 @@ class Solution {
         int index = 0;
         for (Character a : pattern.toCharArray()) {
             if (!map.containsKey(a)) {
-                
                 if (values.contains(arr[index])) {
                     return false;
-                }else {
-                    values.add(arr[index]);
                 }
                 
+                values.add(arr[index]);
                 map.put(a, arr[index]);
               
             }
