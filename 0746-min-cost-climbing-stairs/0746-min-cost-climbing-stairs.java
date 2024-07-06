@@ -13,15 +13,4 @@ class Solution {
         return Math.min(mincost[cost.length-1],mincost[cost.length-2]);
     }
 
-    public void calculatePathCost(int[] cost, int currentCost, int index,       ArrayList<Integer> result){
-
-        if (index >= cost.length) {
-           result.add(currentCost);
-           return;
-        }
-
-        calculatePathCost(cost,currentCost + cost[index],index+1,result);
-        calculatePathCost(cost,currentCost + cost[index],index+2,result);
-
-    }
 }
