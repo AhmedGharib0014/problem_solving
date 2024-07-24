@@ -1,15 +1,5 @@
 class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
-
-        if (nums1.length > nums2.length) {
-            return calculate(nums1, nums2);
-        } else {
-            return calculate(nums2, nums1);
-        }
-
-    }
-
-    public int[] calculate(int[] nums1, int[] nums2) {
         ArrayList<Integer> result = new ArrayList<>();
         Map<Integer, Integer> freq = new HashMap<>();
 
@@ -31,11 +21,7 @@ class Solution {
         }
 
 
-        // Storing it inside array of strings
         int[] arr = new int[result.size()];
-
-        // Converting ArrayList to Array
-        // using get() method
         for (int i = 0; i < result.size(); i++) {
             arr[i] = result.get(i);
         }
