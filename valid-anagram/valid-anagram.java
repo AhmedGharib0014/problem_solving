@@ -10,8 +10,7 @@ class Solution {
         for (Character c : t.toCharArray()) {
             if (charFreq.containsKey(c)) {
                 int value = charFreq.get(c);
-                value--;
-                if (value < 1) {
+                if (--value < 1) {
                     charFreq.remove(c);
                 } else {
                     charFreq.put(c, value);
