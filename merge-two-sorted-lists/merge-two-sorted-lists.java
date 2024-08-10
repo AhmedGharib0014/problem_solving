@@ -9,70 +9,42 @@
  * }
  */
 class Solution {
+    ListNode head = null;
+    ListNode current = head;
+    
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-         ListNode head = null;
-        ListNode current = head;
-
         while (list1 != null || list2 != null) {
             if (list1 != null && list2 != null) {
                 if (list1.val < list2.val) {
-
-                    if (current == null) {
-                        current = list1;
-                        head = current;
-
-                    } else {
-                        current.next = list1;
-                        current = current.next;
-                    }
-                    list1 = list1.next;
-
+                    list1 = addNodeToNewList(list1);
                 } else {
-                    if (current == null) {
-                        current = list2;
-                        head = current;
-
-                    } else {
-                        current.next = list2;
-                        current = current.next;
-                    }
-                    list2 = list2.next;
+                    list2 = addNodeToNewList(list2);
                 }
+
             } else if (list1 == null) {
                 while (list2 != null) {
-
-                    if (current == null) {
-                        current = list2;
-                        head = current;
-
-                    } else {
-                        current.next = list2;
-                        current = current.next;
-                    }
-                    list2 = list2.next;
+                    list2 = addNodeToNewList(list2);
                 }
-
             } else {
-
                 while (list1 != null) {
-
-                    if (current == null) {
-                        current = list1;
-                        head = current;
-
-                    } else {
-                        current.next = list1;
-                        current = current.next;
-                    }
-                    list1 = list1.next;
+                    list1 = addNodeToNewList(list1);
                 }
-
             }
-
-          
         }
 
 
         return head;
+    }
+    
+    ListNode addNodeToNewList(ListNode list) {
+        if (current == null) {
+            current = list;
+            head = current;
+
+        } else {
+            current.next = list;
+            current = current.next;
+        }
+        return list.next;
     }
 }
