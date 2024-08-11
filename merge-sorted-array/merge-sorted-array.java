@@ -7,10 +7,7 @@ class Solution {
             if (index1 < 0) {
                 nums1[i] = nums2[index2];
                 index2--;
-            } else if (index2 < 0) {
-                nums1[i] = nums1[index1];
-                index1--;
-            } else if (nums1[index1] >= nums2[index2]) {
+            } else if (index2 < 0 || nums1[index1] >= nums2[index2]) {
                 nums1[i] = nums1[index1];
                 index1--;
             } else {
