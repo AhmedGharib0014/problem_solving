@@ -2,36 +2,29 @@ import java.math.BigInteger;
 
 public class Solution {
     // you need treat n as an unsigned value
-      public int reverseBits(int n) {
-        for (int i = 0; i < 16; i++) {
-            n = doReverse(n, i);
+    public int reverseBits(int n) {
+       int left = 31;  // start from the leftmost bit
+    int right = 0;  // start from the rightmost bit
+
+    while (left > right) {
+        // Get the bits at the left and right positions
+        int leftBit = (n >> left) & 1;
+        int rightBit = (n >> right) & 1;
+
+        // If the bits are different, swap them
+        if (leftBit != rightBit) {
+            n ^= (1 << left) | (1 << right); // Toggle both bits
         }
+
+        // Move towards the center
+        left--;
+        right++;
+    }
+        
         return n;
+
     }
 
-    public int doReverse(int n, int i) {
-        int x = 1 << (31 - i);
-        int xRestulr = n & x;
-
-        int y = 1 << i;
-        int yREsult = n & y;
-
-        if (xRestulr != 0) {
-            n = n | (1 << i);
-        } else {
-            n = n & (~(1 << i));
-        }
-
-
-        if (yREsult != 0) {
-            n = n | (1 << (31 - i));
-        } else {
-            n = n & (~(1 << (31 - i)));
-
-        }
-
-        return n;
-    }
-
+   
 
 }
