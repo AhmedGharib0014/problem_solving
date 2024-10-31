@@ -28,7 +28,7 @@ class Solution {
 
     
     public int mySqrt(int x) {
-        return binarySearch(x, 1, x);
+        return binarySearch(x, 0, x);
 
     }
 
