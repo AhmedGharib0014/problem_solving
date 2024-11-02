@@ -3,19 +3,17 @@ class Solution {
         if (nums.length == 0) return 0;
         if (nums.length == 1) return 1;
 
-        int i = 0;
-        int j = i + 1;
+       int indexOfUniqueElement = 0;
 
-        while (j < nums.length) {
-            if (nums[j] > nums[i]) {
-                while (j + 1 < nums.length && nums[j] == nums[j + 1]) j++;
-                i++;
-                swap(nums, j, i);
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[indexOfUniqueElement]) {
+                indexOfUniqueElement++;
+                swap(nums, indexOfUniqueElement, i);
             }
-            j++;
         }
 
-        return i + 1;
+
+        return indexOfUniqueElement + 1;
 
     }
 
